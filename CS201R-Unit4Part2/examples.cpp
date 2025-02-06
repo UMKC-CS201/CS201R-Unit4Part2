@@ -144,3 +144,34 @@ void example7() {
     for (auto i : people)
         cout << "Name: " << i.name << " : " << i.age << endl;
 }
+
+
+void example8() {
+    cout << "\nEXAMPLE 8: File I/O\n";
+    //create a Struct to hold information:
+    struct words {
+        string word;
+        int chars;
+    };
+ 
+    // name file
+    ifstream inFile;
+    inFile.open("data.txt");
+    if (!inFile.good())
+        return;
+
+    string inRecord;
+    words tempWord;
+    vector <words> allWords;
+
+    while (getline(inFile, inRecord)) {
+        stringstream inSS(inRecord);
+        inSS >> tempWord.word >> tempWord.chars;
+        allWords.push_back(tempWord);
+    }
+
+    for (auto i : allWords)
+        cout  << left << setw(10) << i.word << " : " << right << i.chars << endl;
+
+    inFile.close();
+}

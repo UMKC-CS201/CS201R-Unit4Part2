@@ -1,5 +1,8 @@
 #pragma once
+#include <iomanip>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <string>
 #include <vector>
 using namespace std;
@@ -12,3 +15,4 @@ void example4();
 void example5();
 void example6();
 void example7();
+void example8();
